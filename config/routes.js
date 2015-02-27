@@ -38,13 +38,15 @@ module.exports.routes = {
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
   'get /register': 'AuthController.register',
-
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
-
   'get /auth/:provider': 'AuthController.provider',
   'get /auth/:provider/callback': 'AuthController.callback',
-  'get /auth/:provider/:action': 'AuthController.callback'
+  'get /auth/:provider/:action': 'AuthController.callback',
+  
+  '/user/upload': {
+    view: 'user/upload'
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -55,5 +57,8 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  'post /file/upload' : 'FileUploadController.upload',
+  'get /file/download': 'FileUploadController.download',
 
 };
